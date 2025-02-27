@@ -31,7 +31,11 @@ const server = http.createServer((req, res) => {
     const resBody = {
       "Hello": "World!"
     };
+res.writeHead(200, {
+  "content-type" : "application/json",
+})
 
+res.end(JSON.stringify(resBody));
     // Return the `resBody` object as JSON in the body of the response
   });
 });
